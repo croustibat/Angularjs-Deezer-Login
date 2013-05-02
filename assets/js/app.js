@@ -17,7 +17,7 @@ myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('!');
   $routeProvider
   	.when('/', {controller:MainCtrl})
-    .when('/my-albums', { templateUrl : 'partial/album_item.html', controller: 'viewAlbum' })
+    .when('/my-albums', {templateUrl: 'partial/album_item.html', controller: 'viewAlbum'})
     .otherwise({redirectTo:'/'});
 });
 

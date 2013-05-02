@@ -36,16 +36,27 @@ function ChildCtrl($scope, $log) {
 
 function viewAlbum($scope, $compile, $log, GlobalVarsService) {
 
+	$scope.safeApply = function(fn) {
+	  var phase = this.$root.$$phase;
+	  if(phase == '$apply' || phase == '$digest') {
+	    if(fn && (typeof(fn) === 'function')) {
+	      fn();
+	    }
+	  } else {
+	    this.$apply(fn);
+	  }
+	};
+
 	$scope.appid = GlobalVarsService.appid;
 
-	$scope.$on('RessourceLoaded',function() {
+	// call API to get deezer albums datas
+	DZ.api('user/me/albums', function(data) {
+		$log.info("test 3", data)
 
-		// call API to get deezer albums datas
-		DZ.api('user/me/albums', function(data) {
-			$scope.response = data;
-		});
-
+		$scope.response = data;
+		$scope.safeApply();
 	});
+
 }
 
 
