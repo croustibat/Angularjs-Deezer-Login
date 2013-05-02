@@ -45,7 +45,6 @@ var displayStatus = function() {
 
 		// broadcast event when DZ calls ends
 		$rootScope.$broadcast('RessourceLoaded');
-
 	});
 
 	return true;
