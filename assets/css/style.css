@@ -1,0 +1,108 @@
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+    html, body {
+        height: 100%;
+    }
+    body {
+      color: #4b5c66;
+      font-family: Helvetica, Arial, sans-serif;
+      min-height:100%;
+    }
+    a {
+      color: #008fd5;
+      text-decoration:none;
+    }
+    h1{
+      color:#008fd5;
+      font-family: 'Montserrat Alternates', Helvetica, Arial, sans-serif;
+    }
+    #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+    }
+    #hero {
+        text-align: center;
+        padding-top:160px;
+    }
+
+    #footer, .push{
+      height:60px;
+    }
+    #footer {
+      width:100%;
+      background-color: transparent;
+      position: relative;
+      bottom:0;
+      z-index:1000;
+    }
+    #footer footer{
+      /*height:60px;*/
+    }
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: relative;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+
+    .navbar-inner{
+      background-color:#008fd5;
+      background-image: none;
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      color: #fff;
+      font-family: 'Montserrat Alternates', Helvetica, Arial, sans-serif;
+      text-shadow:none;
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 13px 20px;
+      color:#313131;
+      text-shadow:none;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+    }
