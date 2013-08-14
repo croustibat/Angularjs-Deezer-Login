@@ -1,19 +1,21 @@
-// Application JS
+/**
+ * ANGULARJS DEEZER APP START HERE
+ */
 
-var $wrap_container = $('#wrap');
+/* ANGULARJS : Start App Module */
+var $myApp = angular.module('dzAppDemo', []);
 
+/* DEEZER : Init */
 var $APPID = '116995';
 DZ.init({
     appId       : $APPID,
     channelUrl  : 'http://'+$domaine+'/Angularjs-Deezer-Login/channel.html'
 });
 
+var $wrap_container = $('#wrap');
 
-/* App Module */
-var myApp = angular.module('dzAppDemo', []);
-
-// Routing
-myApp.config(function($routeProvider, $locationProvider) {
+// ANGULARJS : Routing
+$myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('!');
   $routeProvider
   	.when('/', {controller:MainCtrl})
@@ -22,15 +24,15 @@ myApp.config(function($routeProvider, $locationProvider) {
 });
 
 // global var, use global var to set app_id everywhere for affiliation programm
-// check : http://developers.deezer.com/myapps/affiliate/documentation
-myApp.factory('GlobalVarsService', function() {
+// check : http://developers.deezer.com/$myapps/affiliate/documentation
+$myApp.factory('GlobalVarsService', function() {
   return {
       appid : $APPID
   };
 });
 
 // Deezer login service
-myApp.factory('DZLoader', function($rootScope, $http, $compile, $log) {
+$myApp.factory('DZLoader', function($rootScope, $http, $compile, $log) {
 
 var displayStatus = function() {
 
